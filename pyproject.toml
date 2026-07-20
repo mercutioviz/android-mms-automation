@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "Android MMS Automation Framework"
 requires-python = ">=3.11"
 
+[project.scripts]
+android-mms = "android_mms_automation.cli:app"
+
 [tool.black]
 line-length = 88
 
