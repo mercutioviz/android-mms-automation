@@ -1,0 +1,3 @@
+adb_path = "/mnt/d/Android/platform-tools-latest-windows/platform-tools/adb.exe"
+
+device_serial = "R5CY31HYNAD"
