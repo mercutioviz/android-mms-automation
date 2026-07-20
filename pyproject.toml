@@ -1,0 +1,14 @@
+[project]
+name = "android-mms-automation"
+version = "0.1.0"
+description = "Android MMS Automation Framework"
+requires-python = ">=3.11"
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
