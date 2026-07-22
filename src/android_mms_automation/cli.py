@@ -6,6 +6,8 @@ from __future__ import annotations
 
 import typer
 
+from pathlib import Path
+
 from .device import AndroidDevice
 
 
@@ -42,6 +44,19 @@ def device_info():
     print(f"Density:         {info.density}")
     print()
 
+@app.command()
+def screenshot(
+    output: Path = Path("screenshot.png"),
+):
+    """
+    Capture a screenshot from the Android device.
+    """
+
+    device = AndroidDevice()
+
+    device.screenshot(output)
+
+    print(f"Screenshot saved: {output}")
 
 if __name__ == "__main__":
     app()

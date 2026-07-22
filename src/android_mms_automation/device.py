@@ -8,6 +8,7 @@ from dataclasses import dataclass
 
 from .adb import AdbClient
 
+from pathlib import Path
 
 @dataclass
 class DeviceInfo:
@@ -39,6 +40,13 @@ class AndroidDevice:
 
     def shell(self, command: str) -> str:
         return self.adb.shell(command)
+
+    def screenshot(self, output: Path) -> None:
+        """
+        Capture the current device screen as a PNG.
+        """
+        image = self.adb.exec_out("screencap", "-p")
+        output.write_bytes(image)
 
     @property
     def model(self) -> str:
@@ -78,3 +86,4 @@ class AndroidDevice:
             resolution=self.resolution,
             density=self.density,
         )
+
